@@ -1,0 +1,18 @@
+
+ERROR:
+json-server : File C:\Users\msi\AppData\Roaming\npm\json-server.ps1 cannot be loaded because runnin g scripts is disabled on this system. 
+For more information, see about_Execution_Policies at https:/ go.microsoft.com/fwlink/?LinkID=135170. 
+At line:1 char:1 + json-server --watch db.json + ~~~~~~~~~~~ + CategoryInfo : SecurityError: (:) [], PSSecurityException + FullyQualifiedErrorId : UnauthorizedAccess
+
+
+
+SOLUTİON:
+PS C:\Users\msi\Desktop\javaScript learn 1\akademi tekrarı\intro1-6.week> cd
+PS C:\Users\msi\Desktop\javaScript learn 1\akademi tekrarı\intro1-6.week> set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+PS C:\Users\msi\Desktop\javaScript learn 1\akademi tekrarı\intro1-6.week> Get-ExecutionPolicy       
+RemoteSigned
+PS C:\Users\msi\Desktop\javaScript learn 1\akademi tekrarı\intro1-6.week> Get-ExecutionPolicy -list 
+
+PS C:\Users\msi\Desktop\javaScript learn 1\akademi tekrarı\intro1-6.week> cd src
+PS C:\Users\msi\Desktop\javaScript learn 1\akademi tekrarı\intro1-6.week\src> cd api
+PS C:\Users\msi\Desktop\javaScript learn 1\akademi tekrarı\intro1-6.week\src\api> json-server -p 4000 db.json
